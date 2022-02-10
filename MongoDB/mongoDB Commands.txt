@@ -1,0 +1,78 @@
+MongoDB Commands
+
+--> Creating database
+use databaseName
+
+--> Creating Collection 
+db.createCollection("collectionName")
+
+--> inserting one document in a collection
+db.collectionName.insert({
+							'Field1':'Value1',
+							'Field2':'Value2'})
+
+--> inserting many documents in a collection
+db.collectionName.insertMany([{
+							'Field1':'Value1',
+							'Field2':'Value2'},
+							{
+							'Field1':'Value1',
+							'Field2':'Value2'}])
+							
+--> To view collection
+db.collectionName.find()
+
+--> To view collection in prettyfied 
+db.collectionName.find().pretty()
+
+--> To remove a document in a collection
+db.collectionName.remove({field:value})
+
+--> To update values in a document
+db.collectionName.update({field & values to find particular document},
+					     {updating values using $methods})
+	==>$methods
+		sytnax: $methods: {field: updated_value}
+	$inc : increment
+	$gt  : greater than
+	$lt  : less than 
+	$gte : greater than equal 
+	$lte : less tahn equal 
+	$eq  : equals
+	$set : used to set updates values
+	$in  : used in to know belongongs of fields and values
+	$sort: used in sorting
+	$group: used in grouping
+	$and : and operations
+
+--> To display how many rows
+db.collectionName.find().count()
+
+--> To display only two rows
+db.collectionName.find().limit()
+
+-->
+
+
+--> To display collection
+show collection
+
+--> To remove collection
+db.collectionName.drop()
+
+--> To display current database
+db
+
+--> To remove database
+db.dropDatabase()
+
+
+
+
+
+
+
+
+
+
+	
